@@ -21,6 +21,7 @@ Source100:  fortune-mod.yaml
 Source101:  fortune-mod-rpmlintrc
 Patch0:     %{name}-%{version}-fix-localdir-mixup.patch
 Patch1:     games_to_bin.patch
+Requires:   %{name}-cookies
 BuildRequires:  cmake
 BuildRequires:  perl
 BuildRequires:  recode-devel
@@ -57,7 +58,6 @@ Url:
 Summary:    Data files for %{name}
 Group:      Game
 BuildArch:  noarch
-Requires:   %{name} = %{version}-%{release}
 Provides:   fortune-cookies
 
 %description cookies
@@ -69,16 +69,16 @@ PackageName: Fortune Cookies
 Type: addon
 PackagerName: nephros
 Categories:
- - Game
+  - Game
 Custom:
   Repo: %{url}
+%endif
 
 
 %package offensive-cookies
 Summary:    Data files for %{name}
 Group:      Games
 BuildArch:  noarch
-Requires:   %{name} = %{version}-%{release}
 Provides:   fortune-cookies
 
 %description offensive-cookies
@@ -90,9 +90,10 @@ PackageName: Offensive Cookies
 Type: addon
 PackagerName: nephros
 Categories:
- - Game
+  - Game
 Custom:
   Repo: %{url}
+%endif
 
 
 %prep

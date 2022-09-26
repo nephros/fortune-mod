@@ -59,7 +59,7 @@ Patches:
   - '%{name}-%{version}-fix-localdir-mixup.patch'
   - 'games_to_bin.patch'
 Requires:
-  - %{name}-cookies
+  - '%{name}-cookies'
 PkgBR:
   - cmake
   - perl
@@ -99,6 +99,7 @@ SubPackages:
            - Game
          Custom:
            Repo: %{url}
+         %endif
 
       BuildArch: noarch
       Files:
@@ -159,6 +160,7 @@ SubPackages:
            - Game
          Custom:
            Repo: %{url}
+         %endif
 
       BuildArch: noarch
       Provides:
