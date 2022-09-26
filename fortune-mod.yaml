@@ -37,7 +37,7 @@ Description: |
         - https://openrepos.net/donate
     %endif
 
-#SetupOptions: -q -n %{name}-%{version}
+SetupOptions: -q -n %{name}-%{version}
 RpmLintIgnore:
   - 'summary-too-long'
   - 'no-changelogname-tag'
