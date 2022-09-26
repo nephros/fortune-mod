@@ -85,8 +85,6 @@ pushd build
 
 # >> install post
 popd
-# mangle version info
-sed -i -e "s/unreleased/%{version}/" %{buildroot}%{_datadir}/%{name}/qml/%{name}.qml
 # << install post
 
 %files

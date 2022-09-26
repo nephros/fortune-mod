@@ -76,3 +76,6 @@ NoIconCache: true
 Files:
   - '%license LICENSE'
   - '%{_bindir}/*'
+  - '%dir %{cookiedir}/*'
+  - '%{cookiedir}/*'
+  - '%dir %{localdir}'
