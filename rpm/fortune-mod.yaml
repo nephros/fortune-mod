@@ -56,12 +56,7 @@ Macros:
 #    %endif
 #Patches:
 #  - 'baz'
-Requires:
-  - libsailfishapp-launcher
 PkgBR:
-  - qt5-qttools-linguist
-  - qt5-qmake
-  - sailfish-svg2png
   - qml-rpm-macros
 #PkgConfigBR:
 #    - ^^^

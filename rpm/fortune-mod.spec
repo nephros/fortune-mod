@@ -18,10 +18,6 @@ URL:        https://github.com/nephros/fortune-mod
 Source0:    https://github.com/shlomif/fortune-mod/releases/download/%{name}-%{version}/%{name}-%{version}.tar.xz
 Source100:  fortune-mod.yaml
 Source101:  fortune-mod-rpmlintrc
-Requires:   libsailfishapp-launcher
-BuildRequires:  qt5-qttools-linguist
-BuildRequires:  qt5-qmake
-BuildRequires:  sailfish-svg2png
 BuildRequires:  qml-rpm-macros
 BuildRequires:  cmake
 
