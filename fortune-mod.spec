@@ -65,9 +65,11 @@ Url:
 # >> build pre
 mkdir build
 pushd build
+%cmake .. \
+  -DCOOKIEDIR=%{cookiedir} \
+  -DLOCALDIR=%{localdir}
 # << build pre
 
-%cmake . 
 make %{?_smp_mflags}
 
 # >> build post

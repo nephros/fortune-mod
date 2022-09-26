@@ -58,12 +58,14 @@ Macros:
 Patches:
   - '%{name}-%{version}-fix-localdir-mixup.patch'
 PkgBR:
+  - cmake
   - perl
   - qml-rpm-macros
   - recode-devel
 #PkgConfigBR:
 #    - ^^^
-Builder: cmake
+# actually cmake, but we need to build in a build dir:
+Builder: make
 CMakeOptions:
   - '-DCOOKIEDIR=%{cookiedir}'
   - '-DLOCALDIR=%{localdir}'
