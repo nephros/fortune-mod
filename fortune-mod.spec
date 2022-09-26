@@ -19,6 +19,7 @@ URL:        https://github.com/nephros/fortune-mod
 Source0:    https://github.com/shlomif/fortune-mod/releases/download/%{name}-%{version}/%{name}-%{version}.tar.xz
 Source100:  fortune-mod.yaml
 Source101:  fortune-mod-rpmlintrc
+Patch0:     %{name}-%{version}-fix-localdir-mixup.patch
 BuildRequires:  qml-rpm-macros
 BuildRequires:  recode-devel
 BuildRequires:  cmake
@@ -54,6 +55,8 @@ Url:
 %prep
 %setup -q -n %{name}-%{version}
 
+# %{name}-%{version}-fix-localdir-mixup.patch
+%patch0 -p1
 # >> setup
 # << setup
 

@@ -55,8 +55,8 @@ Macros:
 #    %if 0%{?sailfishos_version} >= 30400
 #    BuildRequires: some-package
 #    %endif
-#Patches:
-#  - 'baz'
+Patches:
+  - '%{name}-%{version}-fix-localdir-mixup.patch'
 PkgBR:
   - qml-rpm-macros
   - recode-devel
