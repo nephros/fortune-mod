@@ -59,6 +59,7 @@ Macros:
 #  - 'baz'
 PkgBR:
   - qml-rpm-macros
+  - recode-devel
 #PkgConfigBR:
 #    - ^^^
 Builder: cmake

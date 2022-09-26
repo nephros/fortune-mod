@@ -20,6 +20,7 @@ Source0:    https://github.com/shlomif/fortune-mod/releases/download/%{name}-%{v
 Source100:  fortune-mod.yaml
 Source101:  fortune-mod-rpmlintrc
 BuildRequires:  qml-rpm-macros
+BuildRequires:  recode-devel
 BuildRequires:  cmake
 
 %description
