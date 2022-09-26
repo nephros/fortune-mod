@@ -38,7 +38,7 @@ PackageName: fortune
 Type: console-application
 PackagerName: nephros
 Categories:
- - Games
+ - Game
 Custom:
   Repo: %{url}
 Icon: %{url}/master/icons/template.svg
@@ -55,13 +55,24 @@ Url:
 
 %package cookies
 Summary:    Data files for %{name}
-Group:      Games
+Group:      Game
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
 Provides:   fortune-cookies
 
 %description cookies
-%{summary}.
+
+Standard fortune cookie data for fortune-mod
+
+%if "%{?vendor}" == "chum"
+PackageName: Fortune Cookies
+Type: addon
+PackagerName: nephros
+Categories:
+ - Game
+Custom:
+  Repo: %{url}
+
 
 %package offensive-cookies
 Summary:    Data files for %{name}
@@ -71,7 +82,18 @@ Requires:   %{name} = %{version}-%{release}
 Provides:   fortune-cookies
 
 %description offensive-cookies
-%{summary}.
+
+Offensive fortune cookie data for fortune-mod
+
+%if "%{?vendor}" == "chum"
+PackageName: Offensive Cookies
+Type: addon
+PackagerName: nephros
+Categories:
+ - Game
+Custom:
+  Repo: %{url}
+
 
 %prep
 %setup -q -n %{name}-%{version}

@@ -23,7 +23,7 @@ Description: |
     Type: console-application
     PackagerName: nephros
     Categories:
-     - Games
+     - Game
     Custom:
       Repo: %{url}
     Icon: %{url}/master/icons/template.svg
@@ -58,6 +58,8 @@ Macros:
 Patches:
   - '%{name}-%{version}-fix-localdir-mixup.patch'
   - 'games_to_bin.patch'
+Requires:
+  - %{name}-cookies
 PkgBR:
   - cmake
   - perl
@@ -81,9 +83,23 @@ Files:
 SubPackages:
     - Name:  cookies
       Summary: Data files for %{name}
-      Group: Games
+      Group: Game
       Provides:
         - fortune-cookies
+      AutoDepend: false
+      Description: |
+
+         Standard fortune cookie data for fortune-mod
+
+         %if "%{?vendor}" == "chum"
+         PackageName: Fortune Cookies
+         Type: addon
+         PackagerName: nephros
+         Categories:
+           - Game
+         Custom:
+           Repo: %{url}
+
       BuildArch: noarch
       Files:
         - '%{cookiedir}/art*'
@@ -131,9 +147,23 @@ SubPackages:
     - Name:  offensive-cookies
       Summary: Data files for %{name}
       Group: Games
+      Description: |
+
+         Offensive fortune cookie data for fortune-mod
+
+         %if "%{?vendor}" == "chum"
+         PackageName: Offensive Cookies
+         Type: addon
+         PackagerName: nephros
+         Categories:
+           - Game
+         Custom:
+           Repo: %{url}
+
       BuildArch: noarch
       Provides:
         - fortune-cookies
+      AutoDepend: false
       Files:
         - '%{cookiedir}/off/*'
         - '%{cookiedir}/men-women*'
