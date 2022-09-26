@@ -102,13 +102,14 @@ pushd build
 # >> install post
 popd
 mkdir -p %{buildroot}/%{localdir}
+rm -rf %{_mandir}
 # << install post
 
 %files
 %defattr(-,root,root,-)
 %license COPYING.txt
 %{_bindir}/*
-%dir %{cookiedir}/*
+%dir %{cookiedir}
 %dir %{localdir}
 # >> files
 # << files
