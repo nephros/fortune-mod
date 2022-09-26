@@ -51,7 +51,7 @@ Url:
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%{version}/cmake
 
 # >> setup
 # << setup
