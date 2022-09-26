@@ -65,6 +65,7 @@ PkgBR:
 #PkgConfigBR:
 #    - ^^^
 # actually cmake, but we need to build in a build dir:
+Configure: none
 Builder: make
 CMakeOptions:
   - '-DCOOKIEDIR=%{cookiedir}'

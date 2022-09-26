@@ -70,7 +70,7 @@ pushd build
 -DLOCALDIR=%{localdir}
 # << build pre
 
-%configure --disable-static
+
 make %{?_smp_mflags}
 
 # >> build post
