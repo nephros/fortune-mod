@@ -1,11 +1,11 @@
---- CMakeLists.txt	2022-09-26 13:37:23.630743842 +0200
-+++ CMakeLists.txt.orig	2022-09-26 13:36:52.969092513 +0200
+--- a/CMakeLists.txt	2022-09-26 13:37:23.630743842 +0200
++++ b/CMakeLists.txt	2022-09-26 13:36:52.969092513 +0200
 @@ -173,7 +173,7 @@
  my_exe(
      "fortune"
      "fortune/fortune.c"
--    "bin"
-+    "games"
+-    "games"
++    "bin"
  )
  
  my_exe(
