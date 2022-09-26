@@ -20,10 +20,10 @@ Source0:    https://github.com/shlomif/fortune-mod/releases/download/%{name}-%{v
 Source100:  fortune-mod.yaml
 Source101:  fortune-mod-rpmlintrc
 Patch0:     %{name}-%{version}-fix-localdir-mixup.patch
+BuildRequires:  cmake
 BuildRequires:  perl
 BuildRequires:  qml-rpm-macros
 BuildRequires:  recode-devel
-BuildRequires:  cmake
 
 %description
 
@@ -66,10 +66,11 @@ Url:
 mkdir build
 pushd build
 %cmake .. \
-  -DCOOKIEDIR=%{cookiedir} \
-  -DLOCALDIR=%{localdir}
+-DCOOKIEDIR=%{cookiedir} \
+-DLOCALDIR=%{localdir}
 # << build pre
 
+%configure --disable-static
 make %{?_smp_mflags}
 
 # >> build post
@@ -89,7 +90,10 @@ popd
 
 %files
 %defattr(-,root,root,-)
-%license LICENSE
+%license COPYING.txt
 %{_bindir}/*
+%dir %{cookiedir}/*
+%{cookiedir}/*
+%dir %{localdir}
 # >> files
 # << files
