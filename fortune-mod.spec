@@ -56,6 +56,7 @@ Url:
 %package cookies
 Summary:    Data files for %{name}
 Group:      Games
+BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
 Provides:   fortune-cookies
 
@@ -65,6 +66,7 @@ Provides:   fortune-cookies
 %package offensive-cookies
 Summary:    Data files for %{name}
 Group:      Games
+BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
 Provides:   fortune-cookies
 

@@ -84,6 +84,7 @@ SubPackages:
       Group: Games
       Provides:
         - fortune-cookies
+      BuildArch: noarch
       Files:
         - '%{cookiedir}/art*'
         - '%{cookiedir}/ascii-art*'
@@ -130,6 +131,7 @@ SubPackages:
     - Name:  offensive-cookies
       Summary: Data files for %{name}
       Group: Games
+      BuildArch: noarch
       Provides:
         - fortune-cookies
       Files:
