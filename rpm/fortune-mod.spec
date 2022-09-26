@@ -8,6 +8,7 @@ Name:       fortune-mod
 # >> macros
 # << macros
 %define cookiedir %{_datadir}/fortune
+%define localdir ${CMAKE_INSTALL_PREFIX}/local/games/fortunes
 
 Summary:    a version of the UNIX fortune command
 Version:    3.14.1

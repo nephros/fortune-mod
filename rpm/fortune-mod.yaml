@@ -46,6 +46,7 @@ RpmLintIgnore:
   - 'explicit-lib-dependency'
 Macros:
   - 'cookiedir;%{_datadir}/fortune'
+  - 'localdir;${CMAKE_INSTALL_PREFIX}/local/games/fortunes'
 #  - |
 #    spectacle_bug; hack_fix
 #    # Spectacular spectacle hack:
@@ -63,6 +64,7 @@ PkgBR:
 Builder: cmake
 CMakeOptions:
   - '-DCOOKIEDIR=%{cookiedir}'
+  - '-DLOCALDIR=%{localdir}'
 NoIconCache: true
 #BuildArch: noarch
 #AutoSubPackages:
