@@ -57,6 +57,7 @@ Url:
 Summary:    Data files for %{name}
 Group:      Games
 Requires:   %{name} = %{version}-%{release}
+Provides:   fortune-cookies
 
 %description cookies
 %{summary}.
@@ -65,6 +66,7 @@ Requires:   %{name} = %{version}-%{release}
 Summary:    Data files for %{name}
 Group:      Games
 Requires:   %{name} = %{version}-%{release}
+Provides:   fortune-cookies
 
 %description offensive-cookies
 %{summary}.

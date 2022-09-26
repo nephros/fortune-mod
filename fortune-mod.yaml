@@ -82,6 +82,8 @@ SubPackages:
     - Name:  cookies
       Summary: Data files for %{name}
       Group: Games
+      Provides:
+        - fortune-cookies
       Files:
         - '%{cookiedir}/art*'
         - '%{cookiedir}/ascii-art*'
@@ -128,6 +130,8 @@ SubPackages:
     - Name:  offensive-cookies
       Summary: Data files for %{name}
       Group: Games
+      Provides:
+        - fortune-cookies
       Files:
         - '%{cookiedir}/off/*'
         - '%{cookiedir}/men-women*'
