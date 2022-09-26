@@ -57,6 +57,7 @@ Macros:
 #    %endif
 Patches:
   - '%{name}-%{version}-fix-localdir-mixup.patch'
+  - 'games_to_bin.patch'
 PkgBR:
   - cmake
   - perl

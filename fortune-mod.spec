@@ -20,6 +20,7 @@ Source0:    https://github.com/shlomif/fortune-mod/releases/download/%{name}-%{v
 Source100:  fortune-mod.yaml
 Source101:  fortune-mod-rpmlintrc
 Patch0:     %{name}-%{version}-fix-localdir-mixup.patch
+Patch1:     games_to_bin.patch
 BuildRequires:  cmake
 BuildRequires:  perl
 BuildRequires:  recode-devel
@@ -73,6 +74,8 @@ Requires:   %{name} = %{version}-%{release}
 
 # %{name}-%{version}-fix-localdir-mixup.patch
 %patch0 -p1
+# games_to_bin.patch
+%patch1 -p1
 # >> setup
 # << setup
 
