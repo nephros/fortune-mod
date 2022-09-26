@@ -101,6 +101,7 @@ pushd build
 
 # >> install post
 popd
+mkdir -p %{buildroot}/%{localdir}
 # << install post
 
 %files
