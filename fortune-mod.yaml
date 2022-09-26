@@ -58,6 +58,7 @@ Macros:
 Patches:
   - '%{name}-%{version}-fix-localdir-mixup.patch'
 PkgBR:
+  - perl
   - qml-rpm-macros
   - recode-devel
 #PkgConfigBR:
