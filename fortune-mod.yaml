@@ -46,7 +46,7 @@ RpmLintIgnore:
   - 'explicit-lib-dependency'
 Macros:
   - 'cookiedir;%{_datadir}/fortune'
-  - 'localdir;%{_prefix}/local/games/fortune'
+  - 'localdir;%{_prefix}/games/fortune'
 #  - |
 #    spectacle_bug; hack_fix
 #    # Spectacular spectacle hack:

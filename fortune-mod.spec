@@ -8,7 +8,7 @@ Name:       fortune-mod
 # >> macros
 # << macros
 %define cookiedir %{_datadir}/fortune
-%define localdir %{_prefix}/local/games/fortune
+%define localdir %{_prefix}/games/fortune
 
 Summary:    a version of the UNIX fortune command
 Version:    3.14.1
