@@ -8,7 +8,7 @@ Name:       fortune-mod
 # >> macros
 # << macros
 %define cookiedir %{_datadir}/fortune
-%define localdir ${CMAKE_INSTALL_PREFIX}/local/games/fortunes
+%define localdir %{_prefix}/local/games/fortune
 
 Summary:    a version of the UNIX fortune command
 Version:    3.14.1
@@ -22,7 +22,6 @@ Source101:  fortune-mod-rpmlintrc
 Patch0:     %{name}-%{version}-fix-localdir-mixup.patch
 BuildRequires:  cmake
 BuildRequires:  perl
-BuildRequires:  qml-rpm-macros
 BuildRequires:  recode-devel
 
 %description
@@ -52,6 +51,22 @@ Url:
     - https://openrepos.net/donate
 %endif
 
+
+%package cookies
+Summary:    Data files for %{name}
+Group:      Games
+Requires:   %{name} = %{version}-%{release}
+
+%description cookies
+%{summary}.
+
+%package offensive-cookies
+Summary:    Data files for %{name}
+Group:      Games
+Requires:   %{name} = %{version}-%{release}
+
+%description offensive-cookies
+%{summary}.
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -93,7 +108,60 @@ popd
 %license COPYING.txt
 %{_bindir}/*
 %dir %{cookiedir}/*
-%{cookiedir}/*
 %dir %{localdir}
 # >> files
 # << files
+
+%files cookies
+%defattr(-,root,root,-)
+%{cookiedir}/art*
+%{cookiedir}/ascii-art*
+%{cookiedir}/computers*
+%{cookiedir}/cookie*
+%{cookiedir}/debian*
+%{cookiedir}/definitions*
+%{cookiedir}/disclaimer*
+%{cookiedir}/drugs*
+%{cookiedir}/education*
+%{cookiedir}/ethnic*
+%{cookiedir}/food*
+%{cookiedir}/fortunes*
+%{cookiedir}/goedel*
+%{cookiedir}/humorists*
+%{cookiedir}/kids*
+%{cookiedir}/knghtbrd*
+%{cookiedir}/law*
+%{cookiedir}/linux*
+%{cookiedir}/literature*
+%{cookiedir}/love*
+%{cookiedir}/magic*
+%{cookiedir}/medicine*
+%{cookiedir}/miscellaneous*
+%{cookiedir}/news*
+%{cookiedir}/paradoxum*
+%{cookiedir}/people*
+%{cookiedir}/perl*
+%{cookiedir}/pets*
+%{cookiedir}/platitudes*
+%{cookiedir}/politics*
+%{cookiedir}/pratchett*
+%{cookiedir}/riddles*
+%{cookiedir}/rules-of-acquisition*
+%{cookiedir}/science*
+%{cookiedir}/songs-poems*
+%{cookiedir}/sports*
+%{cookiedir}/startrek*
+%{cookiedir}/tao*
+%{cookiedir}/translate-me*
+%{cookiedir}/wisdom*
+%{cookiedir}/work*
+%{cookiedir}/zippy*
+# >> files cookies
+# << files cookies
+
+%files offensive-cookies
+%defattr(-,root,root,-)
+%{cookiedir}/off/*
+%{cookiedir}/men-women*
+# >> files offensive-cookies
+# << files offensive-cookies
