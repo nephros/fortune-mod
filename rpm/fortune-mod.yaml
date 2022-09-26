@@ -1,0 +1,76 @@
+Name: fortune-mod
+Summary: a version of the UNIX fortune command
+Version: 4.14.1
+Release: 0
+Group: Applications
+#License: Apache-2.0
+#License: MIT
+License: ASL 2.0
+URL: https://github.com/nephros/fortune-mod
+SCM: https://github.com/nephros/fortune-mod
+Sources:
+    - '%{name}-%{version}.tar.gz'
+Description: |
+
+    fortune is a command-line utility which displays a random quotation from a
+    collection of quotes. This collection is read from the local file system
+    and does not require network access. A large collection of quotes is
+    provided in the download and installed by default, but more quote
+    collections can be added by the user.
+
+    %if "%{?vendor}" == "chum"
+    PackageName: fortune
+    Type: console-application
+    PackagerName: nephros
+    Categories:
+     - Games
+    Custom:
+      Repo: %{url}
+    Icon: %{url}/master/icons/template.svg
+    Url:
+      Homepage: https://www.shlomifish.org/open-source/projects/fortune-mod/
+      Bugtracker: %{url}/issues
+      Donations:
+        - https://noyb.eu/en/donations-other-support-options
+        - https://my.fsfe.org/donate
+        - https://supporters.eff.org/donate/join-4
+        - https://openrepos.net/donate
+    %endif
+
+SetupOptions: -q -n %{name}-%{version}/upstream/%{name}
+RpmLintIgnore:
+  - 'summary-too-long'
+  - 'no-changelogname-tag'
+  - 'invalid-url'
+  - 'desktopfile-without-binary'
+  - 'explicit-lib-dependency'
+#Macros:
+#  - 'foo;bar'
+#  - |
+#    spectacle_bug; hack_fix
+#    # Spectacular spectacle hack:
+#    #   abuse Macros to work around the Macro-deleting bug in 0.32
+#    #   also, add a conditional dep:
+#    %if 0%{?sailfishos_version} >= 30400
+#    BuildRequires: some-package
+#    %endif
+#Patches:
+#  - 'baz'
+Requires:
+  - libsailfishapp-launcher
+PkgBR:
+  - qt5-qttools-linguist
+  - qt5-qmake
+  - sailfish-svg2png
+  - qml-rpm-macros
+#PkgConfigBR:
+#    - ^^^
+Configure: cmake
+Builder: cmake
+NoIconCache: true
+#BuildArch: noarch
+#AutoSubPackages:
+#  - doc
+Files:
+  - '%license LICENSE'
+  - '%{_bindir}/*'
