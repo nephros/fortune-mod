@@ -63,12 +63,15 @@ Url:
 
 %build
 # >> build pre
+mkdir build
+pushd build
 # << build pre
 
 %cmake . 
 make %{?_smp_mflags}
 
 # >> build post
+popd
 # << build post
 
 %install
