@@ -79,10 +79,12 @@ popd
 %install
 rm -rf %{buildroot}
 # >> install pre
+pushd build
 # << install pre
 %make_install
 
 # >> install post
+popd
 # mangle version info
 sed -i -e "s/unreleased/%{version}/" %{buildroot}%{_datadir}/%{name}/qml/%{name}.qml
 # << install post
