@@ -1,6 +1,6 @@
 Name: fortune-mod
 Summary: a version of the UNIX fortune command
-Version: 4.14.1
+Version: 3.14.1
 Release: 0
 Group: Applications
 #License: Apache-2.0
@@ -9,7 +9,7 @@ License: ASL 2.0
 URL: https://github.com/nephros/fortune-mod
 SCM: https://github.com/nephros/fortune-mod
 Sources:
-    - '%{name}-%{version}.tar.gz'
+  - https://github.com/shlomif/fortune-mod/releases/download/%{name}-%{version}/%{name}-%{version}.tar.xz
 Description: |
 
     fortune is a command-line utility which displays a random quotation from a
@@ -37,15 +37,15 @@ Description: |
         - https://openrepos.net/donate
     %endif
 
-SetupOptions: -q -n %{name}-%{version}/upstream/%{name}
+SetupOptions: -q -n %{name}-%{version}
 RpmLintIgnore:
   - 'summary-too-long'
   - 'no-changelogname-tag'
   - 'invalid-url'
   - 'desktopfile-without-binary'
   - 'explicit-lib-dependency'
-#Macros:
-#  - 'foo;bar'
+Macros:
+  - 'cookiedir;%{_datadir}/fortune'
 #  - |
 #    spectacle_bug; hack_fix
 #    # Spectacular spectacle hack:
@@ -65,8 +65,9 @@ PkgBR:
   - qml-rpm-macros
 #PkgConfigBR:
 #    - ^^^
-Configure: cmake
 Builder: cmake
+CMakeOptions:
+  - '-DCOOKIEDIR=%{cookiedir}'
 NoIconCache: true
 #BuildArch: noarch
 #AutoSubPackages:

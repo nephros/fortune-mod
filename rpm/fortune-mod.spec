@@ -7,14 +7,15 @@ Name:       fortune-mod
 
 # >> macros
 # << macros
+%define cookiedir %{_datadir}/fortune
 
 Summary:    a version of the UNIX fortune command
-Version:    4.14.1
+Version:    3.14.1
 Release:    0
 Group:      Applications
 License:    ASL 2.0
 URL:        https://github.com/nephros/fortune-mod
-Source0:    %{name}-%{version}.tar.gz
+Source0:    https://github.com/shlomif/fortune-mod/releases/download/%{name}-%{version}/%{name}-%{version}.tar.xz
 Source100:  fortune-mod.yaml
 Source101:  fortune-mod-rpmlintrc
 Requires:   libsailfishapp-launcher
@@ -53,7 +54,7 @@ Url:
 
 
 %prep
-%setup -q -n %{name}-%{version}/upstream/%{name}
+%setup -q -n %{name}-%{version}
 
 # >> setup
 # << setup
